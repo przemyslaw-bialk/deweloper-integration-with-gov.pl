@@ -7,7 +7,7 @@ import ContactPhoto from "./ContactPhoto";
 
 const ContactFormInfo = () => {
   return (
-    <SectionWrapper>
+    <div>
       <div className="md:min-w-[450px]">
         <SubtittleAccent>kontakt</SubtittleAccent>
         <MainTitle className="mt-2">
@@ -21,7 +21,7 @@ const ContactFormInfo = () => {
         <ContactDeveloperInfo />
         <ContactPhoto />
       </div>
-    </SectionWrapper>
+    </div>
   );
 };
 

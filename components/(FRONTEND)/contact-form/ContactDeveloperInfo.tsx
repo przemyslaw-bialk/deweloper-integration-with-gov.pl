@@ -12,18 +12,18 @@ const ContactDeveloperInfo = () => {
         <div>
           <SubtittleAccent>Zadzwoń do nas</SubtittleAccent>
           <p className="text-muted text-sm tracking-wide">
-            <a href="tel:+48530034701">+48 530 034 701</a>
+            <a href="tel:+48501136736">+48 501 136 736</a>
           </p>
         </div>
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-3 pb-6 md:pb-0">
         <div className="w-fit p-3 border border-accent rounded-sm">
           <MdOutlineMail className="text-accent" />
         </div>
         <div>
           <SubtittleAccent>Napisz do nas</SubtittleAccent>
           <p className="text-muted text-sm tracking-wide">
-            <a href="mailto:biuro@novahome.pl">biuro@novahome.pl</a>
+            <a href="mailto:biuro@biuro@sdizpc.pl">biuro@sdizpc.pl</a>
           </p>
         </div>
       </div>
