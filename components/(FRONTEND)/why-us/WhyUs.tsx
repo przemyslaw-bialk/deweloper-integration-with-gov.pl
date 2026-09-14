@@ -1,14 +1,27 @@
+"use client";
+
 import ButtonSecondary from "@/ui/ButtonSecondary";
 import MainTitle from "@/ui/MainTittle";
 import SectionText from "@/ui/SectionText";
 import SectionWrapper from "@/ui/SectionWrapper";
 import SubtittleAccent from "@/ui/SubtittleAccent";
 import Counter from "./Counter";
+import { useInView } from "react-intersection-observer";
 
 const WhyUs = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <SectionWrapper backgroundColor="bg-background" className="py-12">
-      <div className="flex flex-col md:flex-row items-center justify-between py-6 gap-6">
+      <div
+        ref={ref}
+        className={`flex flex-col items-center justify-between gap-6 py-6 transition-all duration-1000 ease-out md:flex-row ${
+          inView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+        }`}
+      >
         <div>
           <SubtittleAccent>dlaczego my?</SubtittleAccent>
 
@@ -23,7 +36,8 @@ const WhyUs = () => {
             O nas
           </ButtonSecondary>
         </div>
-        <div className="flex gap-2 md:gap-12 items-center ">
+
+        <div className="flex items-center gap-2 md:gap-12">
           <Counter value={10} suffix="+">
             Lat doświadczenia
           </Counter>
