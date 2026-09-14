@@ -20,7 +20,7 @@ const OurOffer = () => {
             Sprawdź dostępne mieszkania w naszych inwestycjach.
           </SectionText>
 
-          <ButtonMain href="/project" className="mt-10 ">
+          <ButtonMain href="/offer" className="mt-10 ">
             Przejdź do oferty
           </ButtonMain>
         </div>

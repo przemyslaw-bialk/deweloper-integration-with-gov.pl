@@ -1,12 +1,26 @@
 import Link from "next/link";
 
-const Navigation = () => {
+type Props = {
+  mobile?: boolean;
+  closeMenu?: () => void;
+};
+
+const Navigation = ({ mobile = false, closeMenu }: Props) => {
   return (
-    <nav>
-      <ul className="flex items-center gap-8">
+    <nav
+      className={
+        mobile ? "fixed inset-0 z-30 h-screen w-screen bg-background" : ""
+      }
+    >
+      <ul
+        className={
+          mobile ? "flex flex-col gap-6 p-6" : "flex items-center gap-8"
+        }
+      >
         <li>
           <Link
             href="/"
+            onClick={closeMenu}
             className="text-sm text-white transition hover:text-accent-light"
           >
             Strona główna
@@ -15,31 +29,28 @@ const Navigation = () => {
 
         <li>
           <Link
-            href="/inwestycje"
-            className="text-sm text-white transition hover:text-accent-light"
-          >
-            Inwestycje
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/o-nas"
+            href="/about"
+            onClick={closeMenu}
             className="text-sm text-white transition hover:text-accent-light"
           >
             O nas
           </Link>
         </li>
+
         <li>
           <Link
-            href="/mieszkania"
+            href="/offer"
+            onClick={closeMenu}
             className="text-sm text-white transition hover:text-accent-light"
           >
-            Mieszkania
+            Oferta
           </Link>
         </li>
+
         <li>
           <Link
-            href="/kontakt"
+            href="/contact"
+            onClick={closeMenu}
             className="text-sm text-white transition hover:text-accent-light"
           >
             Kontakt

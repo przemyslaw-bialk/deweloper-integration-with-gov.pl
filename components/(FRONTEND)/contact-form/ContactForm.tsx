@@ -28,7 +28,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-background-secondary w-full p-10 mr-6">
+    <div className="bg-background-secondary w-full p-10">
       <ContactFormTittle />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">

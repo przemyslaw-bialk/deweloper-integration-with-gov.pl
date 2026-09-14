@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 const CTAHeroButton = () => {
   return (
     <Link
-      href="/kontakt"
+      href="/offer"
       className="group mt-10 inline-block bg-accent px-6 py-3 text-sm font-semibold text-black  "
     >
       <div className="flex items-center justify-center gap-3">

@@ -4,7 +4,7 @@ import SectionWrapper from "@/ui/SectionWrapper";
 
 const ContactPage = () => {
   return (
-    <SectionWrapper className="flex items-start flex-col md:flex-row pt-22">
+    <SectionWrapper className="flex items-start flex-col md:flex-row pt-30">
       <ContactFormInfo />
       <ContactForm />
     </SectionWrapper>

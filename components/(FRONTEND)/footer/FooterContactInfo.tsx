@@ -8,30 +8,35 @@ const FooterContactInfo = () => {
   return (
     <div>
       <FooterSectionTittle>kontakt</FooterSectionTittle>
-      <div className="flex flex-col gap-2">
-        <div className="mt-2 flex items-center gap-2">
-          <VscLocation className="text-accent" />
-          <p className="text-muted text-sm tracking-wide">
-            ul. Solna 12, 62-069 Dąbrowa
-          </p>
+      <div className="flex gap-6">
+        <div>
+          {" "}
+          <div className="mt-2 flex items-center gap-2">
+            <BsTelephone className="text-accent" />
+            <p className="text-muted text-sm tracking-wide">
+              <a href="tel:+48501136736">+48 501 136 736</a>
+            </p>
+          </div>
+          <div className="mt-2 flex items-center gap-2">
+            <VscLocation className="text-accent" />
+            <p className="text-muted text-sm tracking-wide">
+              ul. Solna 12, 62-069 Dąbrowa
+            </p>
+          </div>
         </div>
-        <div className="mt-2 flex items-center gap-2">
-          <BsTelephone className="text-accent" />
-          <p className="text-muted text-sm tracking-wide">
-            <a href="tel:+48501136736">+48 501 136 736</a>
-          </p>
-        </div>
-        <div className="mt-2 flex items-center gap-2">
-          <MdOutlineMail className="text-accent" />
-          <p className="text-muted text-sm tracking-wide hover:underline">
-            <a href="mailto:piotr_cywinski@wp.pl">napisz do nas</a>
-          </p>
-        </div>
-        <div className="mt-2 flex items-center gap-2">
-          <MdSchedule className="text-accent" />
-          <p className="text-muted text-sm tracking-wide">
-            Pon - Pt: 9:00 - 17:00
-          </p>
+        <div>
+          <div className="mt-2 flex items-center gap-2">
+            <MdOutlineMail className="text-accent" />
+            <p className="text-muted text-sm tracking-wide hover:underline">
+              <a href="mailto:biuro@sdizpc.pl">napisz do nas</a>
+            </p>
+          </div>
+          <div className="mt-2 flex items-center gap-2">
+            <MdSchedule className="text-accent" />
+            <p className="text-muted text-sm tracking-wide">
+              Pon - Pt: 9:00 - 17:00
+            </p>
+          </div>
         </div>
       </div>
     </div>
