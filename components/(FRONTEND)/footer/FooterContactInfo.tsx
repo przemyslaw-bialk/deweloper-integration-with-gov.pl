@@ -14,7 +14,7 @@ const FooterContactInfo = () => {
           <div className="mt-2 flex items-center gap-2">
             <BsTelephone className="text-accent" />
             <p className="text-muted text-sm tracking-wide">
-              <a href="tel:+48501136736">+48 501 136 736</a>
+              <a href="tel:+48515433176">+48 515 433 176</a>
             </p>
           </div>
           <div className="mt-2 flex items-center gap-2">

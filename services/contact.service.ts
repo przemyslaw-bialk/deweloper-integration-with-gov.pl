@@ -14,8 +14,9 @@ export const sendContactEmail = async (data: ContactEmailData) => {
   const { name, email, phoneNumber, subject, message } = data;
 
   const { data: result, error } = await resend.emails.send({
-    from: "Formularz kontaktowy <onboarding@resend.dev>",
-    to: ["przemek.bialkwno@gmail.com"],
+    from: "Biuro <biuro@mail.sdizpc.pl>",
+    to: ["biuro@sdizpc.pl"],
+    replyTo: email,
     subject,
     html: `
       <h2>Nowa wiadomość z formularza kontaktowego</h2>

@@ -12,7 +12,7 @@ const ContactDeveloperInfo = () => {
         <div>
           <SubtittleAccent>Zadzwoń do nas</SubtittleAccent>
           <p className="text-muted text-sm tracking-wide">
-            <a href="tel:+48501136736">+48 501 136 736</a>
+            <a href="tel:+48515433176">+48 515 433 176</a>
           </p>
         </div>
       </div>
@@ -23,7 +23,7 @@ const ContactDeveloperInfo = () => {
         <div>
           <SubtittleAccent>Napisz do nas</SubtittleAccent>
           <p className="text-muted text-sm tracking-wide">
-            <a href="mailto:biuro@biuro@sdizpc.pl">biuro@sdizpc.pl</a>
+            <a href="mailto:biuro@sdizpc.pl">biuro@sdizpc.pl</a>
           </p>
         </div>
       </div>

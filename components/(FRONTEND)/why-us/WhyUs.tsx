@@ -38,18 +38,6 @@ const WhyUs = () => {
         </div>
 
         <div className="flex items-center gap-2 md:gap-12">
-          <Counter value={10} suffix="+">
-            Lat doświadczenia
-          </Counter>
-
-          <Counter value={99} suffix="+">
-            Zadowolonych klientów
-          </Counter>
-
-          <Counter value={200} suffix="+">
-            Zrealizowanych mieszkań
-          </Counter>
-
           <Counter value={100} suffix="%">
             Gwarancji jakości
           </Counter>
