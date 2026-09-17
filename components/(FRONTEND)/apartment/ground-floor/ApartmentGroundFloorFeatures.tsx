@@ -4,11 +4,13 @@ import { IoSunnyOutline } from "react-icons/io5";
 
 const ApartmentGroundFloorFeatures = () => {
   return (
-    <div className="flex gap-12 items-center justify-center mt-6 md:mt-0 ">
+    <div className="flex gap-6 md:gap-12 items-center mx-auto flex-col justify-center mt-12 md:mt-0 md:flex-row ">
       <div className="flex flex-col items-center gap-1 text-center">
         <GrHome className="text-accent text-xl md:text-4xl inline-block " />
-        <p className="text-sm font-semibold">58,66m2</p>
-        <p className="text-muted text-sm tracking-wide">Powierzchnia</p>
+        <p className="text-sm font-semibold">102m2</p>
+        <p className="text-muted text-sm tracking-wide">
+          Powierzchnia cakowita
+        </p>
       </div>
       <div className="flex flex-col items-center gap-1 text-center">
         <IoSunnyOutline className="text-accent text-xl md:text-4xl inline-block " />

@@ -20,7 +20,7 @@ const FooterContactInfo = () => {
           <div className="mt-2 flex items-center gap-2">
             <VscLocation className="text-accent" />
             <p className="text-muted text-sm tracking-wide">
-              ul. Solna 12, 62-069 Dąbrowa
+              ul. Solna 12/1, 62-069 Dąbrowa
             </p>
           </div>
         </div>

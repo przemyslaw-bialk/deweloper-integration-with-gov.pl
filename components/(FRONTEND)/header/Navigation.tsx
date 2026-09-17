@@ -46,7 +46,15 @@ const Navigation = ({ mobile = false, closeMenu }: Props) => {
             Oferta
           </Link>
         </li>
-
+        <li>
+          <Link
+            href="/gallery"
+            onClick={closeMenu}
+            className="text-sm text-white transition hover:text-accent-light"
+          >
+            Galeria
+          </Link>
+        </li>
         <li>
           <Link
             href="/contact"
