@@ -73,6 +73,11 @@ const ApartmentPage = () => {
           <ApartmentUpperFloorTable />
           <ApartmentUpperFloorSketch />
         </div>
+        <p className="md:text-left text-center inline-block w-full italic text-xs text-accent">
+          <a href="/prospekt.pdf" className="underline">
+            prospekt
+          </a>
+        </p>
       </SectionWrapper>
     </>
   );
