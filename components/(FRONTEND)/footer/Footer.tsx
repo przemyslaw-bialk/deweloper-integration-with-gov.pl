@@ -6,7 +6,7 @@ import FooterNavigation from "./FooterNavigation";
 const Footer = () => {
   return (
     <SectionWrapper className="py-6">
-      <div className="flex md:flex-row flex-col items-start justify-between gap-12 bg-red-200 ">
+      <div className="flex md:flex-row flex-col items-start justify-between gap-12 ">
         <FooterLogo />
         <FooterNavigation />
         <FooterContactInfo />
