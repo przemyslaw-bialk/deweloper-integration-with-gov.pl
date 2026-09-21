@@ -1,7 +1,10 @@
 import AdminSidebar from "@/components/(ADMIN)/admin-sidebar/AdminSidebar";
-import React from "react";
 
-const AdminLayout = ({ children }: { children: React.ReactNode }) => {
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <section className="flex min-h-screen bg-background">
       <AdminSidebar />
@@ -11,6 +14,4 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       </main>
     </section>
   );
-};
-
-export default AdminLayout;
+}
