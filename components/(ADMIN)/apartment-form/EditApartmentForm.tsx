@@ -4,6 +4,7 @@ import { updateApartmentAction } from "@/actions/apartment";
 import { useState } from "react";
 import EditApartmentButton from "./EditApartmentButton";
 import ApartmentStatus from "./ApartmentStatus";
+import CountPricePerMeterSquare from "./CountPricePerMeterSquare";
 
 type Apartment = {
   _id: string;
@@ -22,6 +23,16 @@ type Props = {
 };
 
 const EditApartmentForm = ({ apartment }: Props) => {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const [priceOfApartment, setPriceOfApartment] = useState(
+    apartment.priceOfApartment,
+  );
+
+  const [pricePerMeterSquare, setPricePerMeterSquare] = useState(
+    apartment.pricePerMeterSquare,
+  );
+
   const apartmentFields = [
     {
       name: "investment",
@@ -38,21 +49,7 @@ const EditApartmentForm = ({ apartment }: Props) => {
       label: "Numer mieszkania",
       value: apartment.apartmentNumber,
     },
-    {
-      name: "priceOfApartment",
-      label: "Cena mieszkania (zł)",
-      value: apartment.priceOfApartment,
-      type: "number",
-    },
-    {
-      name: "pricePerMeterSquare",
-      label: "Cena za m2 (zł)",
-      value: apartment.pricePerMeterSquare,
-      type: "number",
-    },
   ];
-
-  const [isEditing, setIsEditing] = useState(false);
 
   if (!isEditing) {
     return <EditApartmentButton setIsEditing={setIsEditing} />;
@@ -86,16 +83,39 @@ const EditApartmentForm = ({ apartment }: Props) => {
               <input
                 id={field.name}
                 name={field.name}
-                type={field.type ?? "text"}
                 defaultValue={field.value}
                 className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-1 focus:ring-accent"
               />
             </div>
           ))}
+
+          <div>
+            <label
+              htmlFor="priceOfApartment"
+              className="mb-2 block text-sm font-medium text-primary"
+            >
+              Cena mieszkania (zł)
+            </label>
+
+            <input
+              id="priceOfApartment"
+              name="priceOfApartment"
+              type="number"
+              min="1"
+              value={priceOfApartment}
+              onChange={(e) => setPriceOfApartment(Number(e.target.value))}
+              className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
+            />
+          </div>
         </div>
-        <button className="rounded-lg bg-accent px-4 py-1 text-sm font-semibold text-background transition hover:bg-accent-light active:bg-accent-dark">
-          przelicz
-        </button>
+
+        <CountPricePerMeterSquare
+          area={apartment.area}
+          priceOfApartment={priceOfApartment}
+          pricePerMeterSquare={pricePerMeterSquare}
+          setPricePerMeterSquare={setPricePerMeterSquare}
+        />
+
         <div className="mt-5">
           <label
             htmlFor="status"
@@ -106,6 +126,7 @@ const EditApartmentForm = ({ apartment }: Props) => {
 
           <ApartmentStatus value={apartment.status} />
         </div>
+
         <div className="mt-8 flex flex-col-reverse gap-3 border-t border-border pt-6 sm:flex-row sm:justify-end">
           <button
             type="button"
