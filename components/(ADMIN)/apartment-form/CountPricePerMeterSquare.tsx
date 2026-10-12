@@ -19,7 +19,7 @@ const CountPricePerMeterSquare = ({
   };
 
   return (
-    <div className="mt-5">
+    <div>
       <label
         htmlFor="pricePerMeterSquare"
         className="mb-2 block text-sm font-medium text-primary"

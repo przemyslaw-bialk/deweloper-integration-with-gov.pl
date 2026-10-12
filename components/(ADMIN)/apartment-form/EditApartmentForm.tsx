@@ -5,6 +5,11 @@ import { useState } from "react";
 import EditApartmentButton from "./EditApartmentButton";
 import ApartmentStatus from "./ApartmentStatus";
 import CountPricePerMeterSquare from "./CountPricePerMeterSquare";
+import UneditableApartmentFields from "./UneditableApartmentFields";
+import EditApartmentButtons from "./EditApartmentButtons";
+import EditApartmentHeading from "./EditApartmentHeading";
+import EditableApartmentFields from "./EditableApartmentFields";
+import PriceOfApartment from "./PriceOfApartment";
 
 type Apartment = {
   _id: string;
@@ -64,85 +69,28 @@ const EditApartmentForm = ({ apartment }: Props) => {
         }}
         className="w-full max-w-2xl rounded-2xl border border-border bg-background-secondary p-6 shadow-2xl sm:p-8"
       >
-        <h2 className="mb-2 font-heading text-3xl">Edytuj mieszkanie</h2>
-
-        <p className="mb-8 text-sm text-muted">
-          Zaktualizuj dane nieruchomości
-        </p>
-
+        <EditApartmentHeading />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {apartmentFields.map((field) => (
-            <div key={field.name}>
-              <label
-                htmlFor={field.name}
-                className="mb-2 block text-sm font-medium text-primary"
-              >
-                {field.label}
-              </label>
-
-              <input
-                id={field.name}
-                name={field.name}
-                defaultValue={field.value}
-                className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-1 focus:ring-accent"
-              />
-            </div>
+            <EditableApartmentFields field={field} key={field.name} />
           ))}
-
-          <div>
-            <label
-              htmlFor="priceOfApartment"
-              className="mb-2 block text-sm font-medium text-primary"
-            >
-              Cena mieszkania (zł)
-            </label>
-
-            <input
-              id="priceOfApartment"
-              name="priceOfApartment"
-              type="number"
-              min="1"
-              value={priceOfApartment}
-              onChange={(e) => setPriceOfApartment(Number(e.target.value))}
-              className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
-            />
-          </div>
+          <PriceOfApartment
+            priceOfApartment={priceOfApartment}
+            setPriceOfApartment={setPriceOfApartment}
+          />
+          <UneditableApartmentFields
+            numberOfRooms={apartment.numberOfRooms}
+            area={apartment.area}
+          />
         </div>
-
         <CountPricePerMeterSquare
           area={apartment.area}
           priceOfApartment={priceOfApartment}
           pricePerMeterSquare={pricePerMeterSquare}
           setPricePerMeterSquare={setPricePerMeterSquare}
         />
-
-        <div className="mt-5">
-          <label
-            htmlFor="status"
-            className="my-2 block text-sm font-medium text-primary"
-          >
-            Dostępność
-          </label>
-
-          <ApartmentStatus value={apartment.status} />
-        </div>
-
-        <div className="mt-8 flex flex-col-reverse gap-3 border-t border-border pt-6 sm:flex-row sm:justify-end">
-          <button
-            type="button"
-            onClick={() => setIsEditing(false)}
-            className="rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-muted transition hover:border-primary hover:text-foreground"
-          >
-            Anuluj
-          </button>
-
-          <button
-            type="submit"
-            className="rounded-lg bg-accent px-6 py-2.5 text-sm font-semibold text-background transition hover:bg-accent-light active:bg-accent-dark"
-          >
-            Zapisz zmiany
-          </button>
-        </div>
+        <ApartmentStatus value={apartment.status} />
+        <EditApartmentButtons onCancel={() => setIsEditing(false)} />
       </form>
     </div>
   );
